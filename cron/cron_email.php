@@ -22,5 +22,7 @@ function cron_emial()
     $headers = ['Content-Type: text/html; charset=UTF-8'];
     wp_mail($to, $subject, $message, $headers);
 }
-wp_schedule_event(strtotime('today 11:00'), 'daily', 'cron_email');
+if (!wp_next_scheduled('cron_email')) {
+    wp_schedule_event(strtotime('today 11:00'), 'daily', 'cron_email');
+}
 add_action('cron_email', 'cron_emial');

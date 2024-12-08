@@ -24,6 +24,9 @@ require_once(AURELIO_PATH . 'shorcodes/meditations.php');
 // Register API
 require_once(AURELIO_PATH . 'api/post-rand.php');
 
+// Dispara um e-mail para o usuário
+require_once(AURELIO_PATH . 'cron/cron_email.php');
+
 /**
  * This function is triggered when the plugin is activated
  * 
